@@ -143,23 +143,10 @@
   @keyframes nudge{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(5px);} }
   @media (prefers-reduced-motion: reduce){ .cta .arrow{ animation:none; } }
 
-  /* ============ REELS (hero) ============ */
-  .hero-reels{
-    display:flex; gap:clamp(1rem,2.5vw,2rem);
-    margin-top:clamp(2rem,5vw,3.5rem);
-    flex-wrap:wrap;
-  }
-  .reel{
-    flex:1 1 326px;
-    max-width:400px;
-    display:flex; flex-direction:column;
-  }
-  .reel .reel-cap{
-    display:flex; align-items:center; gap:.5rem;
-    margin-bottom:.6rem;
-  }
-  .reel .reel-cap .rec-dot{ flex:none; }
-  /* Instagram's embed.js swaps the blockquote for an iframe; these styles cover the moment before it loads */
+  /* ============ REELS ============ */
+  .reels-row{ display:flex; gap:1rem; flex-wrap:wrap; align-items:flex-start; }
+  .reel{ flex:1 1 300px; max-width:400px; display:flex; flex-direction:column; }
+  /* Instagram's embed.js swaps the blockquote for an iframe; these keep it on-style and sized to the column */
   .reel .instagram-media{
     background:var(--paper-2) !important;
     border:1px solid var(--line) !important;
@@ -180,7 +167,6 @@
     text-transform:uppercase; color:var(--ink-soft);
     border-bottom:1px solid var(--ink-soft); padding-bottom:.2rem;
   }
-  .reel iframe.instagram-media{ min-width:0 !important; }
 
   /* ============ SECTION SHELL ============ */
   section{ padding-top:var(--section-pad); padding-bottom:var(--section-pad); }
@@ -273,22 +259,6 @@
     <span>Live</span><span class="rec-dot"></span>
   </h1>
 
-  <!-- REELS -->
-  <div class="hero-reels" id="reels">
-    <div class="reel">
-      <div class="reel-cap eyebrow"><span class="rec-dot"></span>Reel 01</div>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdyjgY6RzFi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-        <a href="https://www.instagram.com/reel/DdyjgY6RzFi/" target="_blank" rel="noopener">View reel on Instagram ↗</a>
-      </blockquote>
-    </div>
-    <div class="reel">
-      <div class="reel-cap eyebrow"><span class="rec-dot"></span>Reel 02</div>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dfx5q_YhHRR/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-        <a href="https://www.instagram.com/reel/Dfx5q_YhHRR/" target="_blank" rel="noopener">View reel on Instagram ↗</a>
-      </blockquote>
-    </div>
-  </div>
-
   <div class="hero-bottom">
     <p class="hero-intro">Audiovisual specialist working across live streaming, video, sound and creative projects.</p>
     <a href="#work" class="cta">Selected work <span class="arrow">↓</span></a>
@@ -299,14 +269,39 @@
 <section id="work" class="wrap">
   <div class="section-head reveal">
     <h2>Selected Work</h2>
-    <span class="eyebrow">Production log — 01–04</span>
+    <span class="eyebrow">Production log — 01–05</span>
   </div>
 
-  <!-- 01 LECTURE STREAMING -->
-  <div class="project reveal">
+  <!-- 01 REELS -->
+  <div class="project reveal" id="reels">
     <div class="project-grid">
       <div class="project-index">
         <span class="num">01</span>
+        <h3>Reels</h3>
+        <p>Short-form video for social.</p>
+      </div>
+      <div class="reels-row">
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdyjgY6RzFi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            <a href="https://www.instagram.com/reel/DdyjgY6RzFi/" target="_blank" rel="noopener">View reel on Instagram ↗</a>
+          </blockquote>
+          <div class="video-cap">Reel</div>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dfx5q_YhHRR/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            <a href="https://www.instagram.com/reel/Dfx5q_YhHRR/" target="_blank" rel="noopener">View reel on Instagram ↗</a>
+          </blockquote>
+          <div class="video-cap">Reel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 LECTURE STREAMING -->
+  <div class="project reveal">
+    <div class="project-grid">
+      <div class="project-index">
+        <span class="num">02</span>
         <h3>Lecture Streaming</h3>
         <p>Live streaming and recording of public lectures featuring both on-site and remote speakers.</p>
       </div>
@@ -335,11 +330,11 @@
     </div>
   </div>
 
-  <!-- 02 THEATRE FESTIVAL -->
+  <!-- 03 THEATRE FESTIVAL -->
   <div class="project reveal">
     <div class="project-grid">
       <div class="project-index">
-        <span class="num">02</span>
+        <span class="num">03</span>
         <h3>Theatre Festival</h3>
         <p>Live streaming and recording for a theatre festival — capturing performances as they happened, with sound and camera work built around the stage, not around the crew.</p>
       </div>
@@ -352,11 +347,11 @@
     </div>
   </div>
 
-  <!-- 03 CHILDREN'S AUDIO PLAY -->
+  <!-- 04 CHILDREN'S AUDIO PLAY -->
   <div class="project reveal">
     <div class="project-grid">
       <div class="project-index">
-        <span class="num">03</span>
+        <span class="num">04</span>
         <h3>Children's Audio Play</h3>
         <p>A week-long audio theatre camp with a group of children, ending in a fully recorded audio play — voiced and produced by the group from the ground up.</p>
       </div>
@@ -370,11 +365,11 @@
     </div>
   </div>
 
-  <!-- 04 SOUND DESIGN -->
+  <!-- 05 SOUND DESIGN -->
   <div class="project reveal">
     <div class="project-grid">
       <div class="project-index">
-        <span class="num">04</span>
+        <span class="num">05</span>
         <h3>Sound Design</h3>
         <p>Sound design for an independent audiovisual art project.</p>
       </div>
