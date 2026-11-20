@@ -1,0 +1,8 @@
+{
+  // Static portfolio site served by Cloudflare Workers (assets only, no worker script)
+  "name": "portfolio",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public"
+  }
+}
