@@ -6,4 +6,8 @@ Static site served by Cloudflare Workers at https://portfolio.garsh-vasia.worker
 - `public/assets/audio-play.mp3` — audio for the Children's Audio Play project (22 MB)
 - `wrangler.jsonc` — Worker config (static assets from `public/`)
 
-Deploys automatically when the repo is connected to the Worker in Cloudflare (Workers & Pages → portfolio → Settings → Build → Connect repository). Deploy command: `npx wrangler deploy`.
+Deploys automatically on every push to `main` via GitHub Actions (`.github/workflows/deploy.yml`, runs `wrangler deploy`).
+Needs two repo secrets (Settings → Secrets and variables → Actions):
+
+- `CLOUDFLARE_API_TOKEN` — from the Cloudflare account that owns the Worker, using the "Edit Cloudflare Workers" token template
+- `CLOUDFLARE_ACCOUNT_ID` — that account's ID (Workers & Pages overview, right-hand side)
